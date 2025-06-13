@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JAIL</title>
+    <title>TX JAIL</title>
     <link rel="icon" type="image/x-icon" href="media/assets/fav_site.jpg">
     <link rel="stylesheet" href="styles/site_elements.css">
     <link rel="stylesheet" href="styles/page_index.css">
-    <link rel="me" href="https://mastodon.social/@bokuwatetsuo">
+    <!-- Load Solana Web3.js properly -->
+    <script src="https://unpkg.com/@solana/web3.js@1.70.1/lib/index.iife.js"></script>
     <style>
-        body {
-            padding-top: 20px;
-        }
-        /* Wallet connection button styles */
+        /* Wallet connection styles */
         #wallet-connect {
             position: absolute;
             top: 20px;
@@ -32,7 +30,7 @@
             background-color: #00b4d8;
             color: black;
         }
-        #wallet-address {
+        #wallet-info {
             display: none;
             background-color: #111;
             border: 1px solid #333;
@@ -41,13 +39,67 @@
             color: #00b4d8;
             font-size: 14px;
         }
+        .jail-status-badge {
+            color: #ff5555;
+            margin-left: 8px;
+        }
+        
+        /* Existing TX JAIL styles */
+        .wallet-preview {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .wallet-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: #0a0a0a;
+            font-family: monospace;
+        }
+        .wallet-card:last-child {
+            margin-bottom: 0;
+        }
+        .wallet-address {
+            color: #00b4d8;
+            font-weight: bold;
+        }
+        .jail-timer {
+            color: #ff5555;
+        }
+        .tx-time {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        .jail-button {
+            display: inline-block;
+            background-color: #0f3460;
+            color: white;
+            padding: 8px 15px;
+            margin-right: 10px;
+            text-decoration: none;
+            border: 1px solid #00b4d8;
+            font-family: 'Courier New', monospace;
+        }
+        .jail-button:hover {
+            background-color: #00b4d8;
+            color: black;
+        }
+        .jail-status {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- Wallet Connection Button -->
+    <!-- Wallet Connection -->
     <div id="wallet-connect">
         <button id="connect-button">CONNECT WALLET</button>
-        <div id="wallet-address"></div>
+        <div id="wallet-info"></div>
     </div>
 
     <div style="z-index: 5; position: relative; width: fit-content; margin: auto;">
@@ -58,52 +110,14 @@
         <b>TX JAIL</b> <span id="jail-countdown" style="font-size: 28px;">capture in > 30:00</span>
     </div>
 
-    <script>
-        // Wallet connection functionality
-        document.getElementById('connect-button').addEventListener('click', function() {
-            // This is where you'd integrate with Phantom, Solflare, etc.
-            // For demo purposes, we'll simulate a connection
-            const walletAddress = "H" + Math.random().toString(36).substring(2, 10) + 
-                                "..." + Math.random().toString(36).substring(2, 6).toUpperCase();
-            
-            document.getElementById('connect-button').style.display = 'none';
-            const addressDisplay = document.getElementById('wallet-address');
-            addressDisplay.textContent = walletAddress;
-            addressDisplay.style.display = 'block';
-            
-            // Check if this wallet is jailed (simulated)
-            setTimeout(() => {
-                const isJailed = Math.random() > 0.5;
-                if (isJailed) {
-                    const minutesLeft = Math.floor(Math.random() * 15);
-                    const secondsLeft = Math.floor(Math.random() * 60);
-                    addressDisplay.innerHTML += `<span style="color:#ff5555;margin-left:10px;">JAILED (${minutesLeft}:${secondsLeft.toString().padStart(2, '0')})</span>`;
-                }
-            }, 500);
-        });
-
-        // Countdown timer (existing code)
-        let timeLeft = 30 * 60;
-        const countdownElement = document.getElementById('jail-countdown');
-        const countdownInterval = setInterval(() => {
-            timeLeft--;
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            countdownElement.textContent = `capture > ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                countdownElement.textContent = "JAIL ACTIVATED";
-                countdownElement.style.color = "#ff0000";
-            }
-        }, 1000);
-    </script>
-
-    <!-- Rest of your existing HTML remains unchanged -->
+    <!-- Navigation -->
     <div class="container" id="navi">
         <a href="about.html">how this works</a>
         <a href="writing.html">Twitter</a>
         <a href="sitemap.html">Wallets</a>
     </div>
+
+    <!-- Main Content -->
     <div class="container" id="weekly-akr">
         <p><span class="title">Pumpfun Protocol</span></p>
         <p><a href="media/assets/weeklyakira_full.jpg" target="_blank"><img id="weekly" src="media/assets/weeklyakira_thumb.png" alt=""></a></p>
@@ -158,22 +172,85 @@
             <a href="#" class="jail-button">CHECK LUCKY ESCAPE *SOON</a>
         </div>
     </div>
+
     <div class="footer">
         <b>TX JAIL PROTOCOL</b> © 2024 | On-chain enforcement system
     </div>
-    <div id="rss"></div>
 
-    <!-- Random banner images -->
-    <script>
-        images = [
-            "/media/assets/header1.jpg",
-            "media/assets/header2.jpg",
-            "media/assets/header3.jpg",
-            "media/assets/header4.jpg",
-            "media/assets/header5.jpg",
-            "media/assets/header6.jpg"
-        ];
-        document.getElementById("random-img").src = images[Math.floor(Math.random()*images.length)];
-    </script>
+<script>
+    // Initialize Solana connection
+    const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
+
+    // Phantom Wallet Connection
+    const connectButton = document.getElementById('connect-button');
+    const walletInfo = document.getElementById('wallet-info');
+
+    async function getProvider() {
+        if ("solana" in window) {
+            const provider = window.solana;
+            if (provider.isPhantom) {
+                return provider;
+            }
+        }
+        alert("Phantom Wallet not found. Please install it from https://phantom.app");
+        window.open("https://phantom.app/", "_blank");
+        return null;
+    }
+
+    async function connectWallet() {
+        const provider = await getProvider();
+        if (!provider) return;
+
+        try {
+            const response = await provider.connect();
+            const publicKey = response.publicKey.toString();
+            const truncatedAddress = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
+
+            connectButton.style.display = 'none';
+            walletInfo.textContent = truncatedAddress;
+            walletInfo.style.display = 'block';
+
+            checkJailStatus(publicKey);
+        } catch (err) {
+            console.error("Wallet connection error", err);
+        }
+    }
+
+    connectButton.addEventListener("click", connectWallet);
+
+
+    // Stub for jail status check
+    function checkJailStatus(publicKey) {
+        // TODO: Replace with actual on-chain or backend logic
+        console.log(`Checking jail status for wallet: ${publicKey}`);
+    }
+
+    // Countdown timer
+    let timeLeft = 30 * 60;
+    const countdownElement = document.getElementById('jail-countdown');
+    const countdownInterval = setInterval(() => {
+        timeLeft--;
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        countdownElement.textContent = `capture > ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (timeLeft <= 0) {
+            clearInterval(countdownInterval);
+            countdownElement.textContent = "JAIL ACTIVATED";
+            countdownElement.style.color = "#ff0000";
+        }
+    }, 1000);
+
+    // Random banner images
+    const images = [
+        "media/assets/a.jpg",
+        "media/assets/a.jpg",
+        "media/assets/a.jpg",
+        "media/assets/a.jpg",
+        "media/assets/a.jpg",
+        "media/assets/a.jpg"
+    ];
+    document.getElementById("random-img").src = images[Math.floor(Math.random() * images.length)];
+</script>
+
 </body>
 </html>
