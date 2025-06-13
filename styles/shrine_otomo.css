@@ -1,0 +1,183 @@
+:root {
+    --body: "MS Gothic";
+    --header: 30px;
+    --accent: #B22221;
+}
+::selection {
+    background-color: #95aa55;
+    color: #fff;
+}
+html {
+    cursor: grab;
+    background-color: #95aa55;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #95aa55 #ffffff00;
+}
+body {
+    position: relative;
+    width: 1900px;
+    height: 894px;
+    color: #000000;
+    font-family: var(--body);
+    font-size: 14px;
+}
+.container {
+    z-index: 2;
+    width: 500px;
+    border: 2px solid;
+    box-shadow: 5px 5px 0 #000000ef;
+    background-color: #EBCB3C;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) #00000000;
+}
+p {
+    margin: 10px;
+    padding: 8px;
+    line-height: 19px;
+}
+strong {
+    color: var(--accent);
+    font-size: var(--header);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+b {
+    color: var(--accent);
+}
+ul {
+    margin: 0;
+    list-style: none;
+}
+ul li {
+    font-weight: bold;
+    color: var(--accent);
+}
+a:hover {
+    cursor: grabbing;
+    color: var(--accent);
+}
+a {
+    font-weight: bold;
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+#who {
+    position: relative;
+    left: 270px;
+
+    overflow-y: scroll;
+    height: 230px;
+}
+#early-work {
+    position: relative;
+    top: 15px;
+    left: 270px;
+
+    overflow-y: scroll;
+    height: 250px;
+}
+#akira {
+    position: relative;
+    top: 30px;
+    left: 270px;
+
+    overflow-y: scroll;
+    height: 372px;
+}
+
+#influence {
+    width: 586px;
+    position: absolute;
+    top: 0;
+    left: 790px;
+
+    overflow-y: scroll;
+    height: 310px;
+}
+#personal {
+    position: absolute;
+    width: 586px;
+    bottom: 0;
+    left: 790px;
+
+    overflow-y: scroll;
+    height: 560px;
+}
+
+#current {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    overflow-y: scroll;
+    height: 890px;
+}
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+#otomo-box {
+    position: absolute;
+    width: 250px;
+    height: 617px;
+    overflow: hidden;
+}
+.name-rom {
+    position: absolute;
+    font-family: "MS Gothic";
+    font-size: 32px;
+    writing-mode: vertical-lr;
+    top: 60px;
+    right: 100px;
+}
+.name-jp {
+    position: absolute;
+    font-family: "MS Gothic";
+    font-size: 100px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    color: var(--accent);
+}
+.works {
+    height: 617px;
+    position: absolute;
+    left: 185px;
+    font-size: 16px;
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+}
+.written {
+    pointer-events: none;
+    position: absolute;
+    bottom: 142px;
+}
+.photo {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+}
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+/*`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`-`*/
+.go-back {
+    position: absolute;
+    top: 628px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.go-back a {
+    text-decoration: none;
+}
+.see-you {
+    position: absolute;
+    top: 655px;
+    font-size: 22px;
+}
+.cycle {
+    position: absolute;
+    pointer-events: none;
+    left: 145px;
+    bottom: -8px;
+}

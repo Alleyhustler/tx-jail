@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Biz UDGothic";
+    src: url(../fonts/BIZUDGothic-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inconsolata";
+    src: url(../fonts/Inconsolata-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --default: url("../media/assets/cursor_main.png"), default;
+    --pointer: url("../media/assets/cursor_link.png") 6 0, pointer;
+
+    --goth: "Biz UDGothic";
+    --mono: "Consolas", "Inconsolata", monospace;
+    --header1: 45px;
+    --header2: 35px;
+    --biggest: 24px;
+    --bigger: 20px;
+    --big: 16px;
+    --body: 14px;
+    --accent: #008080;
+}
+::selection {
+    color: #000;
+    background-color: var(--accent);
+}
+html {
+    cursor: var(--default);
+    height: fit-content; /*100% pages that don't scroll, REMOVE THIS WHEN THEY DO!!!*/
+    background-image: url(../media/backdrop-alt3.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #fff #000;
+}
+body {
+    position: relative;
+    width: 700px; /*800px, 635px*/
+    height: max-content; /*895px*/
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #000;
+    border: 3px ridge #fff;
+
+    font-family: var(--mono);
+    font-size: var(--body);
+}
+a {
+    color: var(--accent);
+    text-decoration: dotted underline;
+    text-underline-offset: 2px;
+}
+a:hover {
+    cursor: var(--pointer);
+    color: #000000;
+    background-color: var(--accent);
+    font-weight: bold;
+}
+.decor {
+    z-index: 10;
+    position: absolute;
+}
+.container {
+    z-index: 1;
+    width: 660px; /*600px*/
+    text-align: left;
+    color: #fff;
+}
+p {
+    line-height: 21px;
+    margin: 12px 0;
+    padding: 2px 0;
+}
+p i, details {
+    color: #9ba6a3;
+}
+
+.footer {
+    z-index: 15;
+    position: sticky;
+    width: 700px;
+    bottom: 0;
+    margin: auto;
+    padding: 15px 0;
+
+    color: #fff;
+    background-color: #000;
+    font-family: var(--goth);
+    font-size: var(--big);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.jail-status {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.jail-button {
+    display: inline-block;
+    background-color: #0f3460;
+    color: white;
+    padding: 8px 15px;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 1px solid #00b4d8;
+    font-family: 'Courier New', monospace;
+}
+
+.jail-button:hover {
+    background-color: #00b4d8;
+    color: black;
+}

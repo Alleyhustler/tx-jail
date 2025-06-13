@@ -1,0 +1,31 @@
+html {
+    background-image: url(../media/backdrop-out2.png);
+}
+.container {
+    position: relative;
+    margin: auto;
+}
+.title {
+    font-family: var(--goth);
+    font-size: var(--bigger);
+}
+ul {
+    margin-top: -15px;
+    padding: 0;
+    list-style: none;
+}
+li {
+    line-height: 24px;
+    font-family: var(--goth);
+    font-size: var(--big);
+}
+.buttons {
+    text-align: center;
+}
+.buttons a:hover {
+    background-color: transparent;
+}
+
+#musicring:hover {
+    background-color: transparent;
+}

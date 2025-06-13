@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "F25Banker";
+    src: url(../fonts/F25_Bank_Printer.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "F25BankerBold";
+    src: url(../fonts/F25_Bank_Printer_Bold.ttf) format(truetype);
+    font-weight: bold;
+    font-style: normal;
+}
+:root {
+    --body: "F25Banker";
+    --bold: "F25BankerBold";
+    --header1: 32px;
+    --header2: 24px;
+}
+html {
+    background: url(../shrines/bous_assets/background2.png);
+    background-position: center;
+    background-size: cover;
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #ffffff00;
+    cursor: help;
+}
+body {
+    position: relative;
+    width: 700px;
+    height: 1771px;
+    left: 280px;
+    font-family: var(--body);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+p {
+    margin: 12px;
+    padding: 2px;
+    line-height: 21px;
+}
+.title {
+    text-align: center;
+    font-size: 22px;
+    transform: scaleY(1.8);
+    margin-bottom: 20px;
+}
+b {
+    font-family: var(--bold);
+}
+a {
+    color: #000;
+    text-decoration: underline;
+}
+a:hover {
+    color: #ff0000;
+    background: #eeff00;
+}
+
+.container {
+    z-index: 3;
+    position: absolute;
+    background-image: url(../shrines/bous_assets/background_paper.png);
+    background-position: center;
+    filter: drop-shadow(0 0 1px #000);
+    color: #000;
+}
+.decor {
+    z-index: 10;
+    position: absolute;
+}
+.backdrop {
+    z-index: -10;
+    position: absolute;
+}
+
+img#disc1 {
+    animation: spin-for 5.4s infinite linear;
+}
+@keyframes spin-for {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+img#disc2 {
+    animation: spin-back 5.4s infinite linear;
+}
+@keyframes spin-back {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+#go-back {
+    background-position: bottom;
+    height: 70px;
+    left: -280px;
+    top: -9px;
+}
+#go-back p {
+    font-size: 16px;
+    padding: 0;
+    margin: 5px;
+}
+
+#intro {
+    top: -25px;
+    width: 400px;
+    height: 690px;
+}
+#why-i {
+    width: 418px;
+    top: 400px;
+    right: 0;
+}
+#discography {
+    transform: rotate(-2deg);
+    width: 378px;
+    top: 1048px;
+}
+ul {
+    margin: 12px;
+    padding: 2px;
+    list-style: none;
+}
+li {
+    line-height: 18px;
+}
+#discography li a {
+    text-decoration: none;
+}
+#favorites {
+    width: 350px;
+    height: 650px;
+    right: -25px;
+    top: 1120px;
+}

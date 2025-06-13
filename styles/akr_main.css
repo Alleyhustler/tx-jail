@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "Proggy";
+    src: url(../fonts/ProggyCleanSZ.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --accent: "MS Gothic";
+    --main: "Proggy";
+    --hover: 45px;
+    --big: 20px;
+    --body: 16px;
+}
+::selection {
+    color: #fff;
+    background-color: #ff0000;
+}
+html {
+    cursor: crosshair;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+body {
+    margin-top: -12px;
+    font-family: var(--main);
+    font-size: var(--body);
+    color: #000;
+}
+.container > p {
+    padding: 0 8px;
+    line-height: 18px;
+}
+.title {
+    text-align: center;
+    font-family: var(--accent);
+    font-size: 24px;
+}
+.section {
+    font-family: var(--accent);
+    font-size: 28px;
+    line-height: 25px !important;
+}
+.container b, i {
+    font-family: var(--accent);
+    font-size: 12px;
+}
+.container a {
+    text-decoration: none;
+    color: #ff0000;
+}
+
+details {
+    padding: 0 8px;
+    border-bottom: 1px dashed;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+details summary:hover {
+    cursor: pointer;
+}
+summary {
+    font-family: var(--accent);
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+}
+details p {
+    margin: 2px 0;
+    line-height: 16px;
+}
+.lang {
+    font-size: 14px;
+    color: #ff0000;
+}
+
+.container sub {
+    font-family: "MS Gothic";
+    font-size: 12px;
+}
+.container img {
+    pointer-events: none;
+}
+.header {
+    pointer-events: none;
+    margin-left: -8px;
+    border-bottom: 1px solid;
+}
+.divider {
+    pointer-events: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.go-back {
+    text-align: right;
+    font-family: "MS Gothic";
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.go-back a {
+    font-weight: bold;
+    color: #000;
+}

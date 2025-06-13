@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAIL</title>
+    <link rel="icon" type="image/x-icon" href="media/assets/fav_site.jpg">
+    <link rel="stylesheet" href="styles/site_elements.css">
+    <link rel="stylesheet" href="styles/page_index.css">
+    <link rel="me" href="https://mastodon.social/@bokuwatetsuo">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        /* Wallet connection button styles */
+        #wallet-connect {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        #connect-button {
+            background-color: #0f3460;
+            color: white;
+            border: 1px solid #00b4d8;
+            padding: 8px 15px;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        #connect-button:hover {
+            background-color: #00b4d8;
+            color: black;
+        }
+        #wallet-address {
+            display: none;
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 8px 15px;
+            font-family: monospace;
+            color: #00b4d8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Wallet Connection Button -->
+    <div id="wallet-connect">
+        <button id="connect-button">CONNECT WALLET</button>
+        <div id="wallet-address"></div>
+    </div>
+
+    <div style="z-index: 5; position: relative; width: fit-content; margin: auto;">
+        <img id="random-img" src="media/assets/header1.jpg" alt="" style="pointer-events: none;">
+    </div>
+    
+    <div id="index-banner">
+        <b>TX JAIL</b> <span id="jail-countdown" style="font-size: 28px;">capture in > 30:00</span>
+    </div>
+
+    <script>
+        // Wallet connection functionality
+        document.getElementById('connect-button').addEventListener('click', function() {
+            // This is where you'd integrate with Phantom, Solflare, etc.
+            // For demo purposes, we'll simulate a connection
+            const walletAddress = "H" + Math.random().toString(36).substring(2, 10) + 
+                                "..." + Math.random().toString(36).substring(2, 6).toUpperCase();
+            
+            document.getElementById('connect-button').style.display = 'none';
+            const addressDisplay = document.getElementById('wallet-address');
+            addressDisplay.textContent = walletAddress;
+            addressDisplay.style.display = 'block';
+            
+            // Check if this wallet is jailed (simulated)
+            setTimeout(() => {
+                const isJailed = Math.random() > 0.5;
+                if (isJailed) {
+                    const minutesLeft = Math.floor(Math.random() * 15);
+                    const secondsLeft = Math.floor(Math.random() * 60);
+                    addressDisplay.innerHTML += `<span style="color:#ff5555;margin-left:10px;">JAILED (${minutesLeft}:${secondsLeft.toString().padStart(2, '0')})</span>`;
+                }
+            }, 500);
+        });
+
+        // Countdown timer (existing code)
+        let timeLeft = 30 * 60;
+        const countdownElement = document.getElementById('jail-countdown');
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownElement.textContent = `capture > ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "JAIL ACTIVATED";
+                countdownElement.style.color = "#ff0000";
+            }
+        }, 1000);
+    </script>
+
+    <!-- Rest of your existing HTML remains unchanged -->
+    <div class="container" id="navi">
+        <a href="about.html">how this works</a>
+        <a href="writing.html">Twitter</a>
+        <a href="sitemap.html">Wallets</a>
+    </div>
+    <div class="container" id="weekly-akr">
+        <p><span class="title">Pumpfun Protocol</span></p>
+        <p><a href="media/assets/weeklyakira_full.jpg" target="_blank"><img id="weekly" src="media/assets/weeklyakira_thumb.png" alt=""></a></p>
+    </div>
+    
+    <div class="container" id="site-welcome">
+        <p><strong>TX JAIL</strong> is a blockchain protocol that enforces trading discipline by temporarily restricting wallet activity after transactions. When a wallet interacts with the token, it enters a 15-minute "jail" period where further transactions are blocked. This protocol-level mechanism prevents market manipulation and promotes healthier token economics.</p>
+
+        <p>Key features:</p>
+        <ul>
+            <li>Automatic 15-minute cooldown after any token interaction</li>
+            <li>Fully decentralized on-chain enforcement</li>
+            <li>Gas-efficient smart contract implementation</li>
+            <li>Transparent jail status tracking</li>
+        </ul>
+        
+        <div id="info"></div>
+
+        <p><span class="title">TX JAIL STATUS</span></p>
+        <div class="jail-status">
+            <p style="width: 500px;">
+                <b>Current Protocol:</b> Active (v1.0.2)
+                <br>
+                <b>Jail Duration:</b> 15 minutes
+                <br>
+                <b>Lucky Escape Holders:</b> 3,421 wallets
+            </p>
+        </div>
+
+        <p><span class="title">RECENTLY JAILED WALLETS</span></p>
+        <div class="wallet-preview">
+            <div class="wallet-card">
+                <span class="wallet-address">7xQ...9zP</span>
+                <span class="jail-timer">⏳ 12:45 remaining</span>
+                <span class="tx-time">Last TX: 2 min ago</span>
+            </div>
+            <div class="wallet-card">
+                <span class="wallet-address">3hK...8mN</span>
+                <span class="jail-timer">⏳ 08:22 remaining</span>
+                <span class="tx-time">Last TX: 7 min ago</span>
+            </div>
+            <div class="wallet-card">
+                <span class="wallet-address">9bV...4rT</span>
+                <span class="jail-timer">⏳ 14:59 remaining</span>
+                <span class="tx-time">Last TX: 1 min ago</span>
+            </div>
+        </div>
+
+        <p><span class="title">PROTOCOL ACTIONS</span></p>
+        <div class="action-buttons">
+            <a href="sitemap.html" class="jail-button">VIEW ALL JAILED WALLETS</a>
+            <a href="#" class="jail-button">CHECK LUCKY ESCAPE *SOON</a>
+        </div>
+    </div>
+    <div class="footer">
+        <b>TX JAIL PROTOCOL</b> © 2024 | On-chain enforcement system
+    </div>
+    <div id="rss"></div>
+
+    <!-- Random banner images -->
+    <script>
+        images = [
+            "/media/assets/header1.jpg",
+            "media/assets/header2.jpg",
+            "media/assets/header3.jpg",
+            "media/assets/header4.jpg",
+            "media/assets/header5.jpg",
+            "media/assets/header6.jpg"
+        ];
+        document.getElementById("random-img").src = images[Math.floor(Math.random()*images.length)];
+    </script>
+</body>
+</html>

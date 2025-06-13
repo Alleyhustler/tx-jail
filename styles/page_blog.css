@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    margin: auto;
+    top: 15px;
+}
+.entry {
+    margin-bottom: 40px;
+}
+.stats {
+    font-family: var(--goth);
+    font-size: var(--bigger);
+}
+p {
+    margin-bottom: 3px;
+}

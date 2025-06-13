@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "Proggy";
+    src: url(../fonts/ProggyCleanSZ.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --accent: "MS Gothic";
+    --main: "Proggy";
+    --hover: 45px;
+    --big: 20px;
+    --body: 16px;
+}
+::selection {
+    color: #fff;
+    background-color: #ff0000;
+}
+html {
+    cursor: crosshair;
+    height: fit-content;
+    background-image: url(../shrines/akira_assets/backdrop.png);
+    background-color: #000000;
+    animation: scroll 80s linear infinite;
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+}
+@keyframes scroll {
+    from {background-position: left;}
+    to {background-position: right;}
+}
+body {
+    border: 2px solid;
+    position: relative;
+    width: 1100px;
+    height: 899px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: var(--main);
+    font-size: var(--body);
+    background-color: #fff;
+    color: #000;
+}
+a {
+    text-decoration: none;
+    color: #ff0000;
+}
+.container {
+    z-index: 9;
+    position: absolute;
+    width: 550px;
+    height: 800px;
+    right: 0;
+    overflow: hidden;
+    margin: 12px;
+    padding: 0 10px;
+
+    border: 2px solid;
+    background-color: #fff;
+}
+iframe {
+    margin: 0 -10px;
+}
+
+#copyright {
+    position: absolute;
+    top: 241px;
+    left: 61px;
+    font-family: var(--accent);
+    font-size: 12px;
+}
+#logo {
+    z-index: 6;
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    pointer-events: none;
+}
+#akira {
+    z-index: 12;
+    position: absolute;
+    bottom: 0;
+    left: 349px;
+    pointer-events: none;
+}
+#kid {
+    z-index: 10;
+    position: absolute;
+    left: 3px;
+    bottom: 0;
+    pointer-events: none;
+}
+#wires {
+    z-index: 11;
+    position: absolute;
+    left: 225px;
+    bottom: -38px;
+    pointer-events: none;
+}
+
+#line {
+    z-index: 1;
+    position: absolute;
+    width: 2px;
+    height: 899px;
+    right: 550px;
+    background-color: #000000;
+}
+#now-akira {
+    z-index: 2;
+    position: absolute;
+    width: 585px;
+    right: 0;
+    bottom: 7px;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 56px;
+    transform: scaleY(1.9);
+}
+#back {
+    z-index: 5;
+    position: absolute;
+    left: 6px;
+    bottom: 0px;
+
+    font-family: "MS Gothic";
+    font-size: 28px;
+    font-weight: bold;
+}

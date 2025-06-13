@@ -1,0 +1,12 @@
+.container {
+    position: relative;
+    margin: auto;
+    text-align: left;
+}
+.container img {
+    width: 123px;
+}
+.year {
+    font-family: var(--goth);
+    font-size: var(--bigger);
+}

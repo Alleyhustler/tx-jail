@@ -1,0 +1,122 @@
+html {
+    height: 100%;
+}
+body {
+    padding-top: 18px;
+}
+#index-banner {
+    z-index: 6;
+    position: relative;
+    width: fit-content;
+    margin-left: 15px;
+    margin-top: -46px;
+
+    color: #000;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    font-size: var(--header1);
+    font-family: var(--mono);
+    transform: scaleY(1.2);
+}
+
+#navi {
+    position: absolute;
+    top: 235px;
+    width: 95px;
+    height: fit-content;
+    right: 25px;
+    border-left: 1px dashed;
+    padding: 0;
+
+    text-align: right;
+}
+#navi a {
+    display: inline-block;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: var(--goth);
+    font-size: var(--bigger);
+    /*text-underline-offset: 3px;*/
+    color: #fff;
+    text-decoration: none;
+}
+#navi a:hover {
+    color: #000;
+}
+#weekly-akr {
+    z-index: 16;
+    position: absolute;
+    width: 95px;
+    right: 20px;
+    bottom: 85px; /*110px*/
+
+    border-left: 1px dashed;
+    padding-left: 5px;
+    text-align: right;
+}
+#weekly {
+    width: 90px;
+    height: 160px;
+    object-fit: cover;
+}
+#weekly-akr p {
+    margin: 0;
+}
+#weekly-akr a:hover {
+    background-color: transparent;
+}
+
+#rss {
+    position: absolute;
+    bottom: -34px;
+    left: -3px;
+}
+#rss a:hover {
+    background-color: transparent;
+}
+
+#site-welcome {
+    z-index: 11;
+    position: relative;
+    width: 550px;
+    margin-top: -9px;
+    margin-left: 19px;
+}
+.title {
+    font-family: var(--goth);
+    font-size: var(--bigger);
+}
+
+#info {
+    line-height: 21px;
+    padding: 2px 0;
+}
+.warn {
+    margin-bottom: -1px;
+}
+.tooltip {
+    position: relative;
+    display: inline;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 139px;
+    background-color: black;
+    border: 1px solid;
+
+    font-size: 13px !important;
+    line-height: 18px;
+    padding: 8px 10px;
+
+    position: absolute;
+    z-index: 1;
+    left: 100%;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.footer {
+    font-family: var(--mono);
+    font-size: var(--body);
+    text-transform: lowercase;
+}

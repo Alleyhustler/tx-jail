@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TX JAIL - Jailed Wallets</title>
+    <link rel="icon" type="image/x-icon" href="media/assets/favicon.ico">
+    <link rel="stylesheet" href="styles/site_elements.css">
+    <style>
+        .wallet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        .wallet-table th {
+            background-color: #0f3460;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        .wallet-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #333;
+        }
+        .wallet-table tr:nth-child(even) {
+            background-color: #111;
+        }
+        .wallet-table tr:hover {
+            background-color: #16213e;
+        }
+        .status-jailed {
+            color: #ff5555;
+        }
+        .status-active {
+            color: #55ff55;
+        }
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .pagination a {
+            color: #00b4d8;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin: 20px;">
+        <h1>TX JAIL - Jailed Wallets</h1>
+        
+        <table class="wallet-table">
+            <thead>
+                <tr>
+                    <th>Wallet Address</th>
+                    <th>Status</th>
+                    <th>Jail Time Remaining</th>
+                    <th>Last Transaction</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample wallet data - these are randomly generated addresses -->
+                <tr>
+                    <td>5gS...Xq9</td>
+                    <td class="status-jailed">Jailed</td>
+                    <td>14:32</td>
+                    <td>2025-06-13 08:23:45</td>
+                </tr>
+                <tr>
+                    <td>8hT...Yp4</td>
+                    <td class="status-jailed">Jailed</td>
+                    <td>07:15</td>
+                    <td>2025-06-13 15:10:22</td>
+                </tr>
+                <tr>
+                    <td>3kL...Mn7</td>
+                    <td class="status-active">Active</td>
+                    <td>-</td>
+                    <td>2025-06-12 22:45:18</td>
+                </tr>
+                <!-- Additional wallet rows (45 more) -->
+                <tr><td>7jH...Kp2</td><td class="status-jailed">Jailed</td><td>03:45</td><td>2025-06-13 19:32:11</td></tr>
+                <tr><td>9fD...Qw5</td><td class="status-active">Active</td><td>-</td><td>2025-06-11 14:22:33</td></tr>
+                <tr><td>2nB...Vr8</td><td class="status-jailed">Jailed</td><td>11:22</td><td>2025-06-13 11:55:07</td></tr>
+                <tr><td>6mP...Zs1</td><td class="status-jailed">Jailed</td><td>00:58</td><td>2025-06-13 22:19:42</td></tr>
+                <tr><td>4sX...Tg3</td><td class="status-active">Active</td><td>-</td><td>2025-06-10 09:12:54</td></tr>
+                <tr><td>1qW...Fy6</td><td class="status-jailed">Jailed</td><td>09:41</td><td>2025-06-13 13:36:29</td></tr>
+                <tr><td>0pR...Lk9</td><td class="status-active">Active</td><td>-</td><td>2025-06-09 17:48:15</td></tr>
+                <tr><td>5tU...Oh4</td><td class="status-jailed">Jailed</td><td>06:27</td><td>2025-06-13 16:50:33</td></tr>
+                <!-- 38 more rows would be here in a real implementation -->
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <a href="#">&laquo; Previous</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">Next &raquo;</a>
+        </div>
+
+        <div class="stats">
+            <p><strong>Total Wallets Tracked:</strong> 48</p>
+            <p><strong>Currently Jailed:</strong> 32 (66.67%)</p>
+            <p><strong>Average Jail Time:</strong> 12:43</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="index.html">Back to Main</a> | 
+        <a href="how-it-works.html">How TX JAIL Works</a>
+    </div>
+</body>
+</html>

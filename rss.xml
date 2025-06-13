@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>bokuwatetsuo.neocities.org</title>
+        <description>rss updates for my personal site</description>
+        <link>https://bokuwatetsuo.neocities.org/rss.xml</link>
+        <ttl>720</ttl>
+
+        <item>
+        <title>new weekly akira</title>
+        <description>
+            <p><img src="media/assets/weeklyakira_thumb.png"></img></p>
+            <p>new weekly akira image</p>
+        </description>
+        <link>https://bokuwatetsuo.neocities.org/</link>
+        <guid>rss-upd5</guid>
+        <pubDate>2025-06-08 3:07PM EST</pubDate>
+        </item>
+
+        <item>
+        <title>various updates</title>
+        <description>
+            <p>follow up blog post: "re: autograph"</p>
+            <p>some visual changes around the site</p>
+        </description>
+        <link>https://bokuwatetsuo.neocities.org/</link>
+        <guid>rss-upd4</guid>
+        <pubDate>2025-06-07 5:19PM EST</pubDate>
+        </item>
+
+        <item>
+        <title>new blog post "autograph"</title>
+        <description>
+            <p>new short blog post about something exciting</p>
+        </description>
+        <link>https://bokuwatetsuo.neocities.org/blog</link>
+        <guid>rss-upd3</guid>
+        <pubDate>2025-06-03 2:59PM EST</pubDate>
+        </item>
+
+        <item>
+        <title>new drawing</title>
+        <description>
+            <img src="https://bokuwatetsuo.neocities.org/media/artwork/mnyu-thumb.jpg"></img>
+            <p>uploaded a new drawing: "me and you"</p>
+        </description>
+        <link>https://bokuwatetsuo.neocities.org/gallery</link>
+        <guid>rss-upd2</guid>
+        <pubDate>2025-06-01 5:30PM EST</pubDate>
+        </item>
+
+        <item>
+        <title>new weekly akira + rss feed</title>
+        <description>
+            <p>uploaded a new weekly akira img</p>
+            <p>also made an rss feed i guess. idk if this works</p>
+        </description>
+        <link>https://bokuwatetsuo.neocities.org/</link>
+        <guid>rss-upd1</guid>
+        <pubDate>2025-06-01 1:08PM EST</pubDate>
+        </item>
+
+    </channel>
+</rss>
